@@ -22,7 +22,9 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
         },
         {
             primaryColor: "#B964F7",
-            secondaryColor: "#F3F0FD"
+            secondaryColor: "#F3F0FD",
+            r: "#2f2f2f",
+            z: "c620a7"
         }
     ]
 
@@ -48,22 +50,22 @@ const Card = ({ taskObj, index, deleteTask, updateListArray }) => {
         <
         span class = "card-header"
         style = {
-            { "background-color": colors[index % 5].secondaryColor, "border-radius": "10px" } } > { taskObj.Name } < /span> <
+            { "background-color": colors[index % 5].r, "border-radius": "10px" } } > { taskObj.Name } < /span> <
+        div class = "break" > < /div> <
         p className = "mt-3" > { taskObj.Description } < /p>
 
         <
         div style = {
-            { "position": "absolute", "right": "20px", "bottom": "20px" } } >
-        <
-        i class = "far fa-edit mr-3"
+            { "position": "absolute", "right": "20px", "bottom": "20px" } } > { /* <i class = "far fa-edit mr-3" style={{"color" : colors[index%5].primaryColor, "cursor" : "pointer"}} onClick = {() => setModal(true)}></i> */ } <
+        button className = "btn  mt-2"
         style = {
-            { "color": colors[index % 5].primaryColor, "cursor": "pointer" } }
+            { "color": "#ffffff", "cursor": "pointer", "background-color": "#c620a7" } }
         onClick = {
-            () => setModal(true) } > < /i> <
-        i class = "fas fa-trash-alt"
+            () => setModal(true) } > Update < /button> <
+        button className = "btn btn-outline-secondary"
         style = {
-            { "color": colors[index % 5].primaryColor, "cursor": "pointer" } }
-        onClick = { handleDelete } > < /i> <
+            { "color": "afafaf", "cursor": "pointer" } }
+        onClick = { handleDelete } > Delete < /button> <
         /div> <
         /div> <
         EditTask modal = { modal }
